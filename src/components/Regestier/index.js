@@ -1,10 +1,10 @@
-import React from "react";
-import { useNavigate } from "react-router";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-const Login = () => {
+import { useNavigate } from "react-router";
+const Regestier = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
+  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -13,38 +13,42 @@ const Login = () => {
     setUsers(items.data);
   };
 
+  const ckeck = (e) => {
+    e.preventDefault();
+
+    let check = true;
+    // eslint-disable-next-line
+    users.map((item) => {
+      if (item.email === email) {
+        check = false;
+      }
+    });
+
+    if (check) {
+      try {
+        axios.post("http://localhost:5000/caeert", {
+            username: username,
+          email: email,
+          password: password,
+        });
+        navigate("/");
+      } catch (error) {
+        console.log(error);
+      }
+    } else {
+      let myWindow = window.open("", "", "width=200,height=100");
+      myWindow.document.write("<p> email existing</p>");
+      myWindow.focus();
+      navigate("/");
+    }
+  };
+
   useEffect(() => {
     getData();
   }, []);
 
-  const registerPage = () => {
-    navigate("/register");
-  };
-
-  const ckeck = (e) => {
-    e.preventDefault();
-    let ckeck = false;
-    // eslint-disable-next-line
-    users.map((item) => {
-      if (item.email === email && item.password === password) {
-        ckeck = true;
-      }
-    });
-    if (ckeck) {
-      try {
-        localStorage.setItem(
-          "newUser",
-          JSON.stringify({ email })
-        );
-        navigate("/cards");
-      } catch (error) {
-        console.log("error ", error);
-      }
-    } else {
-      let myWindow = window.open("", "", "width=200,height=100");
-      myWindow.document.write("<p> Wrong email or password </p>");
-      myWindow.focus();
-    }
+  const loginPage = () => {
+    navigate("/");
   };
 
   return (
@@ -52,6 +56,12 @@ const Login = () => {
       <form onSubmit={ckeck}>
         <input
           type="text"
+          name="username"
+          placeholder="username"
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <input
+          type="email"
           name="email"
           placeholder="email"
           onChange={(e) => setEmail(e.target.value)}
@@ -62,12 +72,21 @@ const Login = () => {
           placeholder="password"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input type="submit" value="Login" />
+        <input type="submit" value="Register" />
       </form>
-
-      <p onClick={registerPage}>Don't have an account ?</p>
+      <p onClick={loginPage}>Already have an account ?</p>
     </div>
   );
 };
 
-export default Login;
+export default Regestier;
+
+
+
+
+
+
+
+
+
+// Regestier

@@ -22,14 +22,17 @@ const Cards = () => {
     
     return (
         <>
+        {/* <Cards/> */}
         <div>
         {/* {console.log(cards)} */}
+        {localStorage.getItem("newUser")?(
+                   <>
        {cards.map((item)=>{
 
            return(
 
            <div className="cards">
-               
+              
               <h1>{item.name}</h1>
               <hr />
               <h2>Brand:{item.Brand}</h2>
@@ -38,14 +41,16 @@ const Cards = () => {
               <hr />
               <img src={item.img} alt="#"/>
               <hr />
-              <p>{item.price}</p>
-
+              <p>{item.price}$</p>
+          
               
             </div>
 
            
            )
        })}
+       </>):(<p>tou need to login</p>)
+        }
        </div>
        </>
        
