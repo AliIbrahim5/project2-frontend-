@@ -7,6 +7,10 @@ import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Regestier from './components/Regestier';
 
+function logout(){
+  localStorage.removeItem("newUser")
+  window.location.reload(false);
+}
 
 function App() {
   return (
@@ -14,17 +18,25 @@ function App() {
   <>
 
   <div className="container">
-   <Link to="/home">home</Link>
+    <div className="link">
+   <Link to="/home"><li><a href="#">Home</a></li></Link>
    /
-   <Link to="/Regestier">Regestier</Link>
+   <Link to="/Regestier"><li><a href="#">Regestier</a></li></Link>
    /
-   <Link to="/cards">Cards</Link>
+   <Link to="/cards"><li><a href="#">cards</a></li></Link>
    /
-   <Link to="/login">login</Link>
+   <Link to="/login"><li><a href="#">login</a></li></Link>
    /////
-   <Link to="/favorite">favorite</Link>
+   <Link to="/favorite"><li><a href="#">favorite</a></li></Link>
    /
-   <button onClick={()=>{localStorage.removeItem("newUser")}}>logout</button>
+   </div>
+   {localStorage.getItem("newUser")?
+   <button onClick={() =>{logout();}}>logout</button>
+   :
+   ""
+  }
+   
+  
    {/* <Link to="/home">home</Link>
    <Link to="/home">home</Link>
    <Link to="/home">home</Link> */}

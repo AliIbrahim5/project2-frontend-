@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
+import "./style.css"
 import { useNavigate } from "react-router";
 const Regestier = () => {
   const navigate = useNavigate();
@@ -36,9 +38,43 @@ const Regestier = () => {
         console.log(error);
       }
     } else {
-      let myWindow = window.open("", "", "width=200,height=100");
-      myWindow.document.write("<p> email existing</p>");
-      myWindow.focus();
+      const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+          confirmButton: 'btn btn-success',
+          cancelButton: 'btn btn-danger'
+        },
+        buttonsStyling: false
+      })
+      
+      swalWithBootstrapButtons.fire({
+        title: 'Are you sure you are registered?',
+        text: "Do you have an account",
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonText: 'Yes I have',
+        cancelButtonText: 'no I do not have',
+        reverseButtons: true
+      }).then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Go to login',
+            'Go to login',
+            'success'
+          )
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire(
+            'You must create an account',
+            'To be able to enter',
+            'error'
+          )
+        }
+      })
+      // let myWindow = window.open("", "", "width=200,height=100");
+      // myWindow.document.write("<p> email existing</p>");
+      // myWindow.focus();
       navigate("/");
     }
   };
@@ -52,7 +88,7 @@ const Regestier = () => {
   };
 
   return (
-    <div>
+    <div className="reg">
       <form onSubmit={ckeck}>
         <input
           type="text"
