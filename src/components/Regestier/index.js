@@ -84,10 +84,11 @@ const Regestier = () => {
   }, []);
 
   const loginPage = () => {
-    navigate("/");
+    navigate("/login");
   };
 
   return (
+    <div className="fff">
     <div className="reg">
       <form onSubmit={ckeck}>
         <input
@@ -111,6 +112,7 @@ const Regestier = () => {
         <input type="submit" value="Register" />
       </form>
       <p onClick={loginPage}>Already have an account ?</p>
+    </div>
     </div>
   );
 };

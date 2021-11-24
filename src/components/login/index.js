@@ -22,7 +22,7 @@ const Login = () => {
   }, []);
 
   const registerPage = () => {
-    navigate("/register");
+    navigate("/Regestier");
   };
 
   const ckeck = (e) => {
@@ -68,8 +68,8 @@ const Login = () => {
   };
 
   return (
-    <>
-    <img src={img} alt="#" />
+    <div className="vvv">
+    {/* <img src={img} alt="#" /> */}
   
     <div className="col">
       
@@ -95,7 +95,7 @@ const Login = () => {
 
       <p onClick={registerPage}className="name" >Don't have an account ?</p>
     </div>
-    </>
+    </div>
   );
 };
 

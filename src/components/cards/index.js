@@ -7,7 +7,11 @@ import "./style.css";
 const Cards = () => {
   const navigate = useNavigate();
   const [cards, setCards] = useState([]);
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
+
+  const addtofavorite = () => {
+    navigate("/favorite");
+  };
 
   const data = () => {
     // eslint-disable-next-line
@@ -23,22 +27,21 @@ const Cards = () => {
   };
 
   useEffect(() => {
-      if(localStorage.getItem("newUser")) setEmail(localStorage.getItem("newUser"))
-      else {
-        Swal.fire({
-            title: "To view the site, please login!",
-            text: "After pressing ok, you will be directed to login",
-            icon: "question",
-            didClose: () => {
-              navigate("/login");
-            },
-          })
-      }
+    if (localStorage.getItem("newUser"))
+      setEmail(localStorage.getItem("newUser"));
+    else {
+      Swal.fire({
+        title: "To view the site, please login!",
+        text: "After pressing ok, you will be directed to login",
+        icon: "question",
+        didClose: () => {
+          navigate("/login");
+        },
+      });
+    }
 
     data();
   }, []);
-
-
 
   return (
     <>
@@ -47,27 +50,33 @@ const Cards = () => {
         {/* {console.log(cards)} */}
         {email ? (
           <>
-            {cards.length &&
-              cards.map((item) => {
-                return (
-                  <div className="cards">
-                    <h1>{item.name}</h1>
-                    <hr />
-                    <h2>Brand:{item.Brand}</h2>
-                    <hr />
-                    <h4>{item.dac}</h4>
-                    <hr />
-                    <img src={item.img} alt="#" />
-                    <hr />
-                    <p>{item.price}SR</p>
-                    <button>like</button>
-                  </div>
-                );
-              })}
+            
+              {cards.length &&
+                cards.map((item) => {
+                  return (
+                    <div className="mohu">
+                    <div className="cards">
+                      <div >
+                        <h1 className="info__name">{item.name}</h1>
+
+                        <h2 className="info__brand">Brand:{item.Brand}</h2>
+
+                        <h4 className="info__dac">{item.dac}</h4>
+
+                        <img src={item.img} alt="#" />
+
+                        <p className="info__price">{item.price}SR</p>
+
+                        <button className="info__button" onClick={addtofavorite}>add To cart</button>
+                      </div>
+                    </div>
+                    </div>
+                  );
+                })}
+           
           </>
         ) : (
-          <>
-          </>
+          <></>
         )}
       </div>
     </>
