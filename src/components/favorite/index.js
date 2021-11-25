@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import "./style.css"
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 const Favorite = () => {
@@ -47,18 +48,23 @@ const Favorite = () => {
     getLocalStorage();
   };
   return (
-    <div>
+  <>
+        
       {account.length &&
         account.map((item, i) => {
           return (
-            <div>
+            <div className="mohu1">
+            <div className="cards1">
+            <div className="devv1">
               <div onClick={() => itemInfo(item.name)}>
                 {" "}
-                <h1>{item.name}</h1>
-                <img src={item.img} alt="character" />
+                <h1 className="info__name1">{item.name}</h1>
+                <img src={item.img} alt="iphone" />
               </div>
               <button onClick={() => removeFavorite(item._id)}> Remove</button>
             </div>
+             </div>
+             </div>
           );
         })}
       {/* {account.length &&
@@ -68,7 +74,8 @@ const Favorite = () => {
           <img src={item[0].img} alt="character"/>
         </div>
       }) } */}
-    </div>
+      </>
+     
   );
 };
 

@@ -4,8 +4,6 @@ import {Route,Routes,Link} from "react-router-dom";
 import {SiShopify}from "react-icons/si"
 import{RiLoginBoxFill} from "react-icons/ri"
 import {RiPhoneFindFill} from "react-icons/ri"
-import {MdAppRegistration} from "react-icons/md"
-import {HiHome} from "react-icons/hi"
 import Home from './components/Home';
 import Cards from './components/Cards';
 import Navbar from './components/Navbar';
@@ -25,15 +23,15 @@ function App() {
 
   <div className="container">
     <div className="link">
-   <Link to="/home"><a href="#">HOME</a></Link>
+   <Link to="/home"><a href="dddd">HOME</a></Link>
    
-   <Link to="/Regestier"><li><a href="#">Sign Up</a></li></Link>
+   <Link to="/Regestier"><li><a href="ffff">Sign Up</a></li></Link>
    
-   <Link to="/cards"><li><a href="#"><RiPhoneFindFill/></a></li></Link>
+   <Link to="/cards"><li><a href="ddddd"><RiPhoneFindFill/></a></li></Link>
    
-   <Link to="/login"><li><a href="#"><RiLoginBoxFill/></a></li></Link>
+   <Link to="/login"><li><a href="ssss"><RiLoginBoxFill/></a></li></Link>
    
-   <Link to="/Favorite"><li><a href="#"><SiShopify/></a></li></Link>
+   <Link to="/Favorite"><li><a href="ssss"><SiShopify/></a></li></Link>
    {localStorage.getItem("newUser")?
    <button onClick={() =>{logout();}}>logout</button>
    :
