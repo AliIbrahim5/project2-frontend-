@@ -8,6 +8,7 @@ const Cards = () => {
   const navigate = useNavigate();
   const [cards, setCards] = useState([]);
   const [email, setEmail] = useState("");
+  const [remAdd, setRemAdd] = useState([]);
 
   const addtofavorite = () => {
     navigate("/favorite");
@@ -25,6 +26,7 @@ const Cards = () => {
         console.log(error);
       });
   };
+  const user = JSON.parse(localStorage.getItem("newUser"));
 
   useEffect(() => {
     if (localStorage.getItem("newUser"))
@@ -42,6 +44,41 @@ const Cards = () => {
 
     data();
   }, []);
+  const getDataEmail = async () => {
+    const item = await axios.get(
+      `http://localhost:5000/alluse`
+    );
+    setRemAdd(item.data);
+    
+  };
+  ///start
+  const removeOrAdd = async (id) => {
+    let test = [];
+
+    remAdd.forEach((item) => {
+      test.push(item._id);
+    });
+
+    if (test.includes(id)) {
+
+      document.getElementById(`${id}`).innerHTML = "add";
+
+      await axios.put(
+        `http://localhost:5000/removeFav/${user.email}/${id}`
+      );
+    } else {
+
+      document.getElementById(`${id}`).innerHTML = "remove";
+
+      await axios.put(
+        `http://localhost:5000/favorite/${user.email}/${id}`
+      );
+    }
+    test = [];
+    getDataEmail();
+  };
+////finsh
+
 
   return (
     <>
@@ -61,13 +98,13 @@ const Cards = () => {
 
                         <h2 className="info__brand">Brand:{item.Brand}</h2>
 
-                        <h4 className="info__dac">{item.dac}</h4>
+                        <h4 className="info__dac" >{item.dac}</h4>
 
                         <img src={item.img} alt="#" />
 
                         <p className="info__price">{item.price}SR</p>
 
-                        <button className="info__button" onClick={addtofavorite}>add To cart</button>
+                        <button className="info__button" id={item._id} onClick={() => removeOrAdd(item._id)}>add To cart</button>
                       </div>
                     </div>
                     </div>

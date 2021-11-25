@@ -11,6 +11,7 @@ import Cards from './components/Cards';
 import Navbar from './components/Navbar';
 import Login from './components/Login';
 import Regestier from './components/Regestier';
+import Favorite from './components/Favorite';
 
 function logout(){
   localStorage.removeItem("newUser")
@@ -24,22 +25,22 @@ function App() {
 
   <div className="container">
     <div className="link">
-   <Link to="/home"><a href="#"><HiHome/></a></Link>
+   <Link to="/home"><a href="#">HOME</a></Link>
    
-   <Link to="/Regestier"><li><a href="#"><MdAppRegistration/></a></li></Link>
+   <Link to="/Regestier"><li><a href="#">Sign Up</a></li></Link>
    
    <Link to="/cards"><li><a href="#"><RiPhoneFindFill/></a></li></Link>
    
    <Link to="/login"><li><a href="#"><RiLoginBoxFill/></a></li></Link>
    
-   <Link to="/favorite"><li><a href="#"><SiShopify/></a></li></Link>
-   
-   </div>
+   <Link to="/Favorite"><li><a href="#"><SiShopify/></a></li></Link>
    {localStorage.getItem("newUser")?
    <button onClick={() =>{logout();}}>logout</button>
    :
    ""
   }
+   </div>
+ 
    
   
    {/* <Link to="/home">home</Link>
@@ -53,6 +54,7 @@ function App() {
         <Route path="/Login" element={<Login/>} />
         <Route path="/Navbar" element={<Navbar/>} />
         <Route path="/Regestier" element={<Regestier/>} />
+        <Route path="/Favorite" element={<Favorite/>} />
    </Routes>
 
    </>

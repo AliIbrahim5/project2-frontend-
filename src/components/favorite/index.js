@@ -1,5 +1,4 @@
 import React from "react";
-import Nav from "../Nav";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
@@ -16,10 +15,11 @@ const Favorite = () => {
 
   // Get info the character base on email from backend
   const getData = async () => {
-    const item = await axios.get(
-      `http://localhost:5000/favorite/${local.email}`
-    );
-    setAccount(item.data);
+    if (local) {
+      const item = await axios.get( `http://localhost:5000/favv/${local.email}`);
+      setAccount(item.data);
+    }
+   
   };
 
   // invoke functions getLocalStorage
@@ -48,8 +48,6 @@ const Favorite = () => {
   };
   return (
     <div>
-      <Nav />
-      <p>Favorite</p>
       {account.length &&
         account.map((item, i) => {
           return (

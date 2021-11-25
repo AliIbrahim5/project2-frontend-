@@ -3,7 +3,6 @@ import "./style.css"
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import img from "../img/mon.jfif";
 
 import Swal from "sweetalert2"
 const Login = () => {
