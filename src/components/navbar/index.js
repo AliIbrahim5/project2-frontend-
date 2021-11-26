@@ -19,7 +19,7 @@ const Navbar = () => {
                     <h1 className="logo"><span>m</span>ersal</h1>
                     <div className="routes">
                         <ul className="route-list">
-                            <li><Link to={"/home"} className="route-url">Home</Link></li>
+                            <li><Link to={"/Home"} className="route-url">Home</Link></li>
                             <li><Link to="/cards">Cards</Link></li>
                         </ul>
                     </div>

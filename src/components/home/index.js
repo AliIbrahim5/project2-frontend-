@@ -1,14 +1,23 @@
-import React from 'react'
-import {Route,Routes} from "react-router-dom";
+import {React} from 'react'
+import Login from "../Login"
+
+import "./style.css"
 
 const Home = () => {
     return (
         <>
-        <Routes>
-        <Route path="/home" element={<Home/>}/>
-       </Routes>
-       </>
+    <Login/>
+    
+     
+           
+       
+     
+   
+    </>
     )
+    
 }
+
+
 
 export default Home

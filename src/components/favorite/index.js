@@ -1,11 +1,11 @@
 import React from "react";
 import axios from "axios";
 import "./style.css"
-import {useNavigate} from "react-router";
+// import {useNavigate} from "react-router";
 import {useState, useEffect} from "react";
 
 const Favorite = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [account, setAccount] = useState([]);
     const [local, setLocal] = useState([]);
 
@@ -24,26 +24,22 @@ const Favorite = () => {
 
     };
 
-    // invoke functions getLocalStorage
+    
     useEffect(() => {
         getLocalStorage();
         // eslint-disable-next-line
     }, []);
 
-    // invoke functions getData
+  
     useEffect(() => {
         getData();
         // eslint-disable-next-line
     }, [local]);
 
-    // Navigate to character info
-    const itemInfo = (name) => {
-        console.log(name);
-        navigate(`/character/name/${name}`);
-    };
+    
 
 
-    // Remove from favorite
+    // Remove  favorite
     const removeFavorite = (id) => {
         axios.put(`http://localhost:5000/removeFav/${local.email}/${id}`);
         getLocalStorage();

@@ -22,9 +22,9 @@ const Login = () => {
         getData();
     }, []);
 
-    const registerPage = () => {
-        navigate("/Regestier");
-    };
+    // const registerPage = () => {
+    //     navigate("/Regestier");
+    // };
 
     const ckeck = (e) => {
         e.preventDefault();
