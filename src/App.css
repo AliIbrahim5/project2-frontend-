@@ -1,11 +1,18 @@
+@font-face { font-family: inter-regular;
+    src: url('/src/src/fonts/Inter-Regular.ttf'); }
+
+body {
+    font-family: inter-regular, sans-serif;
+}
+
 /* .container{
 
    margin-left: 10px;
 } */
 .container {
-   float: left;
- }
- 
+    float: left;
+}
+
 /* .container {
    list-style-type: none;
    width: 100%;
@@ -33,35 +40,37 @@
    margin-left: 50%;
  } */
 
- body{
+body {
     margin: 0;
     padding: 0;
 
- }
+}
 
- .link{
+.link {
     width: 100vw;
     float: right;
     background-color: antiquewhite;
-    
-    
- }
-*{
-   margin: 0;
+
+
 }
- li{
-    
+
+* {
+    margin: 0;
+}
+
+li {
+
     display: inline-block;
     padding-left: 50%;
     padding: 15px 50px;
 
- }
+}
 
- a{
+a {
     text-align: center;
     color: #1b1515;
     text-decoration: none;
-    font-family: 'open sans',sans-serif;
-   
- }
+    font-family: 'open sans', sans-serif;
+
+}
  
