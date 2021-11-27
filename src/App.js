@@ -1,10 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Cards from "./components/Cards";
-import Login from "./components/Login";
+import Home from "./components/home";
+import Cards from "./components/cards";
+import Login from "./components/login";
 import Regestier from "./components/Regestier";
-import Favorite from "./components/Favorite";
+import Favorite from "./components/favorite";
 import Profile from "./components/Profile";
 import Navbar from "./components/navbar";
 import "./App.css";
