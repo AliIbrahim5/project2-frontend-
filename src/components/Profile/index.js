@@ -69,15 +69,15 @@ const Profile = () => {
             <form className={"form"} >
       
               <div className="input-field">
-              <input type="submit" value="Edit" onClick={editName}  className="show"/>
+              <input type="submit" value="Changing name" onClick={editName}  className="show"/>
               </div>
               <div className="input-field">
-              <input type="text" placeholder="Edit You username" onChange={(e) => setEdit(e.target.value)} className="show"/>
+              <input type="text" placeholder="Changing You username" onChange={(e) => setEdit(e.target.value)} className="show"/>
               </div>
-            <h1>User Name: {item.username}</h1>
+            <h1>Name: {item.username}</h1>
             
             
-            <h1>Email: {item.email}</h1><h3></h3> 
+            <h1>Email: {item.email}</h1>
             
             
            
