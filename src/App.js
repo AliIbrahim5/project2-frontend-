@@ -7,10 +7,12 @@ import Login from "./components/Login";
 import Regestier from "./components/Regestier";
 import Favorite from "./components/Favorite";
 import Profile from "./components/Profile";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
         <Route exact path="/Profile" element={<Profile />} />
         <Route exact path="/home" element={<Home />} />
