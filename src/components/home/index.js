@@ -1,23 +1,14 @@
-import {React} from 'react'
-import Login from "../Login"
+import { React } from "react";
+import Login from "../Login";
 
-import "./style.css"
+import "./style.css";
 
 const Home = () => {
-    return (
-        <>
-    <Login/>
-    
-     
-           
-       
-     
-   
+  return (
+    <>
+      <Login />
     </>
-    )
-    
-}
+  );
+};
 
-
-
-export default Home
+export default Home;

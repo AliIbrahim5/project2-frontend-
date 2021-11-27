@@ -1,4 +1,3 @@
-import "./App.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
@@ -8,6 +7,7 @@ import Regestier from "./components/Regestier";
 import Favorite from "./components/Favorite";
 import Profile from "./components/Profile";
 import Navbar from "./components/Navbar";
+import "./App.css";
 
 function App() {
   return (
