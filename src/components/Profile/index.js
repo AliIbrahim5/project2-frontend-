@@ -74,11 +74,11 @@ const Profile = () => {
               <div className="input-field">
               <input type="text" placeholder="Edit You username" onChange={(e) => setEdit(e.target.value)} className="show"/>
               </div>
-            <h1>User Name:</h1>
-            <p>{item.username}</p>
+            <h1>User Name: {item.username}</h1>
             
-            <h1>Email:</h1>
-            <h3>{item.email}</h3> 
+            
+            <h1>Email: {item.email}</h1><h3></h3> 
+            
             
            
             <button className="btn btn-danger btn-block" onClick={kick}>Logout</button>
