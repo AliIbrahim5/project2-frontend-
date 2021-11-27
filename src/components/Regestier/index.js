@@ -12,7 +12,7 @@ const Regestier = () => {
   const [password, setPassword] = useState("");
 
   const getData = async () => {
-    const items = await axios.get("http://localhost:5000/alluse");
+    const items = await axios.get("https://mersall.herokuapp.com/alluse");
     setUsers(items.data);
   };
 
@@ -29,7 +29,7 @@ const Regestier = () => {
 
     if (check) {
       try {
-        axios.post("http://localhost:5000/caeert", {
+        axios.post("https://mersall.herokuapp.com/caeert", {
             username: username,
           email: email,
           password: password,

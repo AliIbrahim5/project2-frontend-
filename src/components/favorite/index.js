@@ -18,7 +18,7 @@ const Favorite = () => {
     // Get info the character base on email from backend
     const getData = async () => {
         if (local) {
-            const item = await axios.get(`http://localhost:5000/favv/${local.email}`);
+            const item = await axios.get(`https://mersall.herokuapp.com/favv/${local.email}`);
             setAccount(item.data);
         }
 
@@ -41,7 +41,7 @@ const Favorite = () => {
 
     // Remove  favorite
     const removeFavorite = (id) => {
-        axios.put(`http://localhost:5000/removeFav/${local.email}/${id}`);
+        axios.put(`https://mersall.herokuapp.com/removeFav/${local.email}/${id}`);
         getLocalStorage();
     };
     return (

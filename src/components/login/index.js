@@ -14,7 +14,7 @@ const Login = () => {
     const [password, setPassword] = useState();
 
     const getData = async () => {
-        const items = await axios.get("http://localhost:5000/alluse");
+        const items = await axios.get("https://mersall.herokuapp.com/alluse");
         setUsers(items.data);
     };
 

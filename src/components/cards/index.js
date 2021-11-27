@@ -17,7 +17,7 @@ const Cards = () => {
     const data = () => {
         // eslint-disable-next-line
         axios
-            .get("http://localhost:5000/allcards")
+            .get("https://mersall.herokuapp.com/allcards")
             .then((dete) => {
                 setCards(dete.data);
                 // console.log(dete.data);
@@ -47,7 +47,7 @@ const Cards = () => {
     }, []);
 
     const getDataEmail = async () => {
-        const item = await axios.get(`http://localhost:5000/alluse`);
+        const item = await axios.get(`https://mersall.herokuapp.com/alluse`);
         setRemAdd(item.data);
     };
     ///start
@@ -61,11 +61,11 @@ const Cards = () => {
         if (test.includes(id)) {
             document.getElementById(`${id}`).innerHTML = "add";
 
-            await axios.put(`http://localhost:5000/removeFav/${user.email}/${id}`);
+            await axios.put(`https://mersall.herokuapp.com/removeFav/${user.email}/${id}`);
         } else {
             document.getElementById(`${id}`).innerHTML = "remove";
 
-            await axios.put(`http://localhost:5000/favorite/${user.email}/${id}`);
+            await axios.put(`https://mersall.herokuapp.com/favorite/${user.email}/${id}`);
         }
         test = [];
         getDataEmail();

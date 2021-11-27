@@ -15,7 +15,7 @@ const Profile = () => {
    
     if(local){
     const item = await axios.get(
-      `http://localhost:5000/email/${local.email}`
+      `https://mersall.herokuapp.com/email/${local.email}`
     );
     setAccount(item.data);} else {
     navigate('/home')
@@ -44,7 +44,7 @@ const Profile = () => {
   const editName = async (e) => {
     e.preventDefault();
     if (edit.length > 0) {
-       const editFullName = await axios.put(`http://localhost:5000/edit/${local.email}`, {
+       const editFullName = await axios.put(`https://mersall.herokuapp.com/edit/${local.email}`, {
         username: edit,
         });
         console.log(editFullName);
