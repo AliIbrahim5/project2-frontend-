@@ -78,10 +78,10 @@ const Cards = () => {
                 <div className="cards-container">
                     {cards.map((item) => {
                         return (
-                            <div className="card">
+                            <div className="card" >
                                 <img src={item.img} alt="#" className="card-imag"/>
                                 <div className="card-details">
-                                    <h2 className="info__name">{item.name}</h2>
+                                    <h2 className="info__name" >{item.name}</h2>
                                     <p className="info__price">{item.price} <span>SR</span></p>
                                     <p className="info__brand">Brand: <span>{item.Brand}</span></p>
                                     <p className="info__dac">{item.dac}</p>

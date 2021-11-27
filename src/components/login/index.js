@@ -82,7 +82,7 @@ const Login = () => {
                     </div>
                     <div className="input-field">
                         <p>password</p>
-                        <input type="password" name="password" placeholder="ex. 12345678"
+                        <input type="password" name="password" placeholder="ex.12345"
                                onChange={(e) => setPassword(e.target.value)}/>
                     </div>
                     <input type="submit" value="Login" className={"btn"}/>
