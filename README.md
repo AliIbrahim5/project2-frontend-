@@ -2,6 +2,15 @@
  https://trello.com/b/7fH0xrOL/the-project-steps-to-be-reached
 
 
+
+### The packages used
+npx create-react-app
+
+npm install sweetalert2
+
+### Store business:
+In order not to steal the fun from you and tell you the contents of the store, open the terminal and type the following command {npm start} and enter and enjoy shopping
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
