@@ -76,7 +76,7 @@ const Login = () => {
             <div className="login-box">
                 <form onSubmit={ckeck} className={"form"}>
                     <div className="input-field">
-                        <p>username</p>
+                        <p>Email</p>
                         <input type="text" name="email" placeholder="example@gmail.com"
                                onChange={(e) => setEmail(e.target.value)}/>
                     </div>
